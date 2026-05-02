@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ghostsend_frontend
+    # Comentamos los puertos porque NPM se encargará de esto internamente
+    # ports:
+    #   - "3000:3000"
+    networks:
+      - nginx-network # Cambiamos ghostsend_net por la red del proxy
+    restart: always
+
+networks:
+  nginx-network:
+    external: true

@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:5257/api/v1/files';
+const BASE_URL = import.meta.env.VITE_API_URL || '/api/v1/files';
 
 export const api = {
     async uploadFile(fileBlob, maxDownloads, lifeTimeHours) {
