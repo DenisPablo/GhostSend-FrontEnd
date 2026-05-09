@@ -124,7 +124,7 @@ export function DownloadView({ fileId }) {
 
             <h2 style={{ marginBottom: '0.5rem', wordBreak: 'break-all' }}>{hashData ? hashData.originalName : metadata.fileName}</h2>
             <p className="subtitle" style={{ marginBottom: '2rem' }}>
-                {(metadata.size / 1024 / 1024).toFixed(2)} MB • {metadata.maxDownloads ? `Downloads: ${metadata.currentDownloads} / ${metadata.maxDownloads}` : `${metadata.currentDownloads} downloads`}
+                {(metadata.fileSize / 1024 / 1024).toFixed(2)} MB • {metadata.maxDownloads ? `Downloads: ${metadata.currentDownloads} / ${metadata.maxDownloads}` : `${metadata.currentDownloads} downloads`}
             </p>
 
             {error && <div className="toast error" style={{ marginBottom: '1.5rem' }}>{error}</div>}
